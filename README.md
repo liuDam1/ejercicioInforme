@@ -1,6 +1,6 @@
 # Generador de Informes de Sistema
 
-Este programa en Java ejecuta múltiples comandos del sistema operativo (`ps aux`, `df -h`, `free -h`) para recopilar información sobre el estado del sistema y genera un informe estructurado en formato Markdown. El proyecto utiliza el patrón de diseño Factory para facilitar la extensibilidad a diferentes formatos de informe.
+Este programa en Java ejecuta múltiples comandos del sistema operativo (`ps`, `df`, `free`) para recopilar información sobre el estado del sistema y genera un informe estructurado en formato Markdown. El proyecto utiliza el patrón de diseño Factory para facilitar la extensibilidad a diferentes formatos de informe.
 > https://github.com/liuDam1/ejercicioInforme.git
 
 ## Diagrama de Secuencia
@@ -13,11 +13,11 @@ sequenceDiagram
     participant Informe as InformeMarkdown
     participant Archivo as Archivo de Salida
 
-    Main->>CMD: Ejecutar ps aux
+    Main->>CMD: Ejecutar ps
     CMD-->>Main: Salida de procesos
-    Main->>CMD: Ejecutar df -h
+    Main->>CMD: Ejecutar df
     CMD-->>Main: Salida de disco
-    Main->>CMD: Ejecutar free -h
+    Main->>CMD: Ejecutar free
     CMD-->>Main: Salida de memoria
     Main->>Factory: crearInforme(MARKDOWN)
     Factory-->>Main: Devuelve Instancia InformeMarkdown
@@ -33,7 +33,7 @@ sequenceDiagram
 
 El programa:
 
-1. Lanza procesos hijos para ejecutar los comandos del sistema `ps aux`, `df -h` y `free -h`
+1. Lanza procesos hijos para ejecutar los comandos del sistema `ps`, `df` y `free`
 2. Lee la salida de cada comando ejecutado
 3. Utiliza el patrón Factory para crear una instancia del generador de informes Markdown
 4. Genera un informe estructurado con la información recopilada
@@ -169,9 +169,9 @@ try {
 ## Flujo Completo de Ejecución
 
 1. El proceso principal (Programa Java) inicia la ejecución.
-2. Ejecuta el comando `ps aux` y lee su salida.
-3. Ejecuta el comando `df -h` y lee su salida.
-4. Ejecuta el comando `free -h` y lee su salida.
+2. Ejecuta el comando `ps` y lee su salida.
+3. Ejecuta el comando `df` y lee su salida.
+4. Ejecuta el comando `free` y lee su salida.
 5. Utiliza el patrón Factory para crear una instancia de `InformeMarkdown`.
 6. Llama al método `generarInforme()` con la información recopilada.
 7. El generador de informes crea el contenido Markdown y lo escribe en un archivo.
@@ -215,6 +215,6 @@ Ventajas de este patrón en el proyecto:
 El informe Markdown generado contiene las siguientes secciones:
 
 1. **Título y fecha de generación**
-2. **Procesos en Ejecución**: Salida del comando `ps aux`
-3. **Uso del Disco**: Salida del comando `df -h`
-4. **Uso de Memoria**: Salida del comando `free -h`
+2. **Procesos en Ejecución**: Salida del comando `ps`
+3. **Uso del Disco**: Salida del comando `df`
+4. **Uso de Memoria**: Salida del comando `free`
