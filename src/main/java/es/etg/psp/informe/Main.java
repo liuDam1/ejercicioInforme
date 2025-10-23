@@ -16,9 +16,9 @@ public class Main {
     public static final String MSG_EXITO = "Informe generado correctamente en: ";
     public static final String SALTO_LINEA = "\n";
     
-    public static final String[] COMANDO_PS = { "ps", "aux" };
-    public static final String[] COMANDO_DF = { "df", "-h" };
-    public static final String[] COMANDO_FREE = { "free", "-h" };
+    public static final String[] COMANDO_PS = { "ps"};
+    public static final String[] COMANDO_DF = { "df"};
+    public static final String[] COMANDO_FREE = { "free"};
 
     public static void main(String[] args) {
         try {

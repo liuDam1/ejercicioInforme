@@ -13,9 +13,9 @@ public class InformeMarkdown implements Informe {
     // Constantes para el formato Markdown
     public static final String TITULO_PRINCIPAL = "# Informe de Recursos del Sistema";
     public static final String ETIQUETA_FECHA = "**Fecha de generación:** ";
-    public static final String SECCION_PROCESOS = "## Procesos en Ejecución";
-    public static final String SECCION_DISCO = "## Uso del Disco";
-    public static final String SECCION_MEMORIA = "## Uso de Memoria";
+    public static final String SECCION_PROCESOS = "## Procesos en Ejecución (ps)";
+    public static final String SECCION_DISCO = "## Uso del Disco (df)";
+    public static final String SECCION_MEMORIA = "## Uso de Memoria (free)";
     public static final String CODIGO_BASH = "```bash";
     public static final String CIERRE_CODIGO = "```";
     
