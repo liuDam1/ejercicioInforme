@@ -1,6 +1,5 @@
 package es.etg.psp.informe;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,6 +13,7 @@ import es.etg.psp.informe.informe.TipoInforme;
 
 public class Main {
     public static final String MSG_ERROR = "Se ha producido un error al ejecutar el comando";
+    public static final String MSG_EXITO = "Informe generado correctamente en: ";
     public static final String SALTO_LINEA = "\n";
     
     public static final String[] COMANDO_PS = { "ps", "aux" };
@@ -31,7 +31,7 @@ public class Main {
             
             informe.generarInforme(salidaPs, salidaDf, salidaFree);
             
-            System.out.println("Informe generado correctamente en: " + tipo.getNombreArchivo());
+            System.out.println(MSG_EXITO + tipo.getNombreArchivo());
             System.exit(0);
             
         } catch (IOException e) {

@@ -1,7 +1,7 @@
 package es.etg.psp.informe.informe;
 
-
 public class InformeFactory {
+    public static final String MSG_TIPO_NO_SOPORTADO = "Tipo de informe no soportado: ";
     
     public static Informe crearInforme(TipoInforme tipo) {
         switch (tipo) {
@@ -15,7 +15,7 @@ public class InformeFactory {
             //     return new InformeHTML();
                 
             default:
-                throw new IllegalArgumentException("Tipo de informe no soportado: " + tipo);
+                throw new IllegalArgumentException(MSG_TIPO_NO_SOPORTADO + tipo);
         }
     }
 }
